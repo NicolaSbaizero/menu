@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Menu</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f6f3ee;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    text-align:center;
+    width:90%;
+    max-width:450px;
+}
+
+img{
+    max-width:180px;
+    margin-bottom:25px;
+}
+
+h1{
+    color:#333;
+    margin-bottom:10px;
+}
+
+p{
+    color:#666;
+    margin-bottom:35px;
+}
+
+button{
+    width:100%;
+    padding:18px;
+    margin:10px 0;
+    font-size:20px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    background:#8B0000;
+    color:white;
+    transition:.2s;
+}
+
+button:hover{
+    background:#a80000;
+}
+
+.footer{
+    margin-top:35px;
+    color:#999;
+    font-size:14px;
+}
+
+</style>
+
+<script>
+
+function openMenu(lang){
+
+    if(lang=="it")
+        location.href="menu-it.pdf";
+
+    if(lang=="en")
+        location.href="menu-en.pdf";
+
+    if(lang=="de")
+        location.href="menu-de.pdf";
+
+}
+
+window.onload=function(){
+
+let l=navigator.language.toLowerCase();
+
+if(l.startsWith("it"))
+    document.documentElement.lang="it";
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Se hai il logo -->
+<!-- <img src="logo.png"> -->
+
+<h1>Benvenuti</h1>
+
+<p>Select your language<br>Sprache wählen</p>
+
+<button onclick="openMenu('it')">
+🇮🇹 Italiano
+</button>
+
+<button onclick="openMenu('en')">
+🇬🇧 English
+</button>
+
+<button onclick="openMenu('de')">
+🇩🇪 Deutsch
+</button>
+
+<div class="footer">
+Scansiona • Scegli • Consulta il menu
+</div>
+
+</div>
+
+</body>
+</html>
